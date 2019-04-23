@@ -5,7 +5,7 @@ Please refer to this file [requirements.txt](https://github.com/Spritea/Context-
 
 ## Getting started
 1. Download ISPRS Vaihingen and Potsdam datasets on the [website](http://www2.isprs.org/commissions/comm3/wg4/data-request-form2.html) by following its instructions.
-2. Put these datasets in corresponding `dataset` subfolder. Note that original colorful labels need to be converted to index-based (0,1,2,3,4,5) image using this code. 
+2. Put these datasets in corresponding `dataset` subfolder. Note that original colorful labels need to be converted to index-based (0,1,2,3,4,5) image using this [code](https://github.com/Spritea/Context-Aggregation-Network/blob/master/precode.py). 
 3. Run this command to train CAN model on ISPRS Vaihingen dataset or Potsdam dataset by replacing `isprs_vaihingen.yml` with `isprs_potsdam.yml`. You can set many customized parameters in the `.yml` file.:
 ```
 python train.py --config configs/isprs_vaihingen.yml
