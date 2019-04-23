@@ -47,9 +47,9 @@ def conv3x3_bn(in_channel, out_channel):
                          nn.ReLU(inplace=True))
 
 
-class GAU(nn.Module):
+class AMM(nn.Module):
     def __init__(self, in_size, out_size):
-        super(GAU, self).__init__()
+        super(AMM, self).__init__()
         self.in_size = in_size
         self.out_size = out_size
         self.conv = nn.Conv2d(in_size*2, out_size, kernel_size=1, stride=1, bias=False)
@@ -166,9 +166,9 @@ class RefineBlock(nn.Module):
         return out
 
 
-class FPA(nn.Module):
+class CFM(nn.Module):
     def __init__(self, in_channel, out_channel):
-        super(FPA, self).__init__()
+        super(CFM, self).__init__()
 
         self.c15_1 = nn.Conv2d(in_channel, out_channel, kernel_size=15, stride=1, padding=7, bias=False)
         self.c11_1 = nn.Conv2d(in_channel, out_channel, kernel_size=11, stride=1, padding=5, bias=False)
@@ -246,17 +246,17 @@ class CAN(nn.Module):
         # self.fc = nn.Linear(512 * block.expansion, num_classes)
         # only for >=res50
 
-        # self.fpa=FPA(2048,512)
-        self.fpa = FPA(512, 512)
+        # self.CFM=CFM(2048,512)
+        self.CFM = CFM(512, 512)
         self.rb4_2 = RefineBlock(512 * 5)
 
-        self.fuse43 = GAU(512, 512)
+        self.fuse43 = AMM(512, 512)
         # self.post_proc43 = conv3x3_bn(512*2,512)
         self.rb3_2 = RefineBlock(512)
-        self.fuse32 = GAU(512, 512)
+        self.fuse32 = AMM(512, 512)
         self.rb2_2 = RefineBlock(512)
         # self.post_proc32 = conv3x3_bn(512)
-        self.fuse21 = GAU(512, 512)
+        self.fuse21 = AMM(512, 512)
         self.rb1_2 = RefineBlock(512)
         # self.post_proc21 = conv3x3_bn(512)
 
@@ -296,7 +296,7 @@ class CAN(nn.Module):
         l3 = self.rb3_1(l3)
         l4 = self.rb4_1(l4)
 
-        l4 = self.fpa(l4)
+        l4 = self.CFM(l4)
         l4 = self.rb4_2(l4)
 
         x_fuse43 = self.fuse43(l4, l3)
