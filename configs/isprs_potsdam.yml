@@ -6,7 +6,7 @@ data:
     val_split: val
     img_rows: 512
     img_cols: 512
-    path: your/path/to/ISPRS/Potsdam/dataset/
+    path: dataset/Potsdam/
 training:
     train_iters: 300000
     batch_size: 6

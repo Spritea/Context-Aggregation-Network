@@ -1,9 +1,12 @@
 matplotlib==2.0.0
 numpy==1.12.1
 scipy==0.19.0
-torch==0.4.1
+torch==0.4.0
 torchvision==0.2.0
 tqdm==4.11.2
 pydensecrf
 protobuf
 tensorboardX
+pyyaml
+opencv-python
+natsort
