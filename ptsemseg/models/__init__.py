@@ -8,6 +8,7 @@ from ptsemseg.models.pspnet import pspnet
 from ptsemseg.models.icnet import icnet
 from ptsemseg.models.linknet import linknet
 from ptsemseg.models.frrn import frrn
+from ptsemseg.models.CAN import CAN50
 
 
 def get_model(model_dict, n_classes, version=None):
@@ -41,6 +42,8 @@ def get_model(model_dict, n_classes, version=None):
     elif name == "icnetBN":
         model = model(n_classes=n_classes, **param_dict)
 
+    elif name == "CAN":
+        model = model(n_classes=n_classes, **param_dict)
     else:
         model = model(n_classes=n_classes, **param_dict)
 
@@ -61,6 +64,7 @@ def _get_model_instance(name):
             "linknet": linknet,
             "frrnA": frrn,
             "frrnB": frrn,
+            "CAN":CAN50,
         }[name]
     except:
         raise ("Model {} not available".format(name))
