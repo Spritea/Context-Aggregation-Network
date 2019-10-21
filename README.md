@@ -17,7 +17,7 @@ Trained models used in benchmark evaluation for testing are provided in [Mega](h
 This repo is heavily based on the framework provided by [pytorch-semseg](https://github.com/meetshah1995/pytorch-semseg). You can refer to that repo for more details.
 
 ## Citation
-If this is helpful for you, please consider to cite the following article:
+If this is helpful for you, please consider to cite this article:
 ```
 @article{cheng2019context,
   title={Context Aggregation Network for Semantic Labeling in Aerial Images},
