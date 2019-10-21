@@ -13,3 +13,18 @@ python train.py --config configs/isprs_vaihingen.yml
 
 ## Dependency
 This repo is heavily based on the framework provided by [pytorch-semseg](https://github.com/meetshah1995/pytorch-semseg). You can refer to that repo for more details.
+
+## Citation
+If this is helpful for you, please consider to cite the following article:
+```
+@article{cheng2019context,
+  title={Context Aggregation Network for Semantic Labeling in Aerial Images},
+  author={Cheng, Wensheng and Yang, Wen and Wang, Min and Wang, Gang and Chen, Jinyong},
+  journal={Remote Sensing},
+  volume={11},
+  number={10},
+  pages={1158},
+  year={2019},
+  publisher={Multidisciplinary Digital Publishing Institute}
+}
+```
