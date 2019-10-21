@@ -10,6 +10,8 @@ Please refer to this file [requirements.txt](https://github.com/Spritea/Context-
 ```
 python train.py --config configs/isprs_vaihingen.yml
 ```
+## Models
+Trained models used in benchmark evaluation for testing are provided in [Mega](https://mega.nz/#F!Al4HGASJ!fEmoIhcYtr4YkW72P-z5Yg).
 
 ## Dependency
 This repo is heavily based on the framework provided by [pytorch-semseg](https://github.com/meetshah1995/pytorch-semseg). You can refer to that repo for more details.
