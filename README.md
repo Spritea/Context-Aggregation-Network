@@ -13,7 +13,7 @@ python train.py --config configs/isprs_vaihingen.yml
 ## Models
 Trained models used in benchmark evaluation for testing are provided in [Mega](https://mega.nz/#F!Al4HGASJ!fEmoIhcYtr4YkW72P-z5Yg).
 ## Dataset folder
-The dataset folder should have the following structure:
+If you use `my_loader.py` as dataloader function, the dataset folder should have the following structure:
 
     ├── "dataset_name"                   
     |   ├── train
@@ -23,7 +23,6 @@ The dataset folder should have the following structure:
     |   ├── test
     |   ├── test_labels
 
-If you use `my_loader.py` as dataloader function.
 ## Dependency
 This repo is heavily based on the framework provided by [pytorch-semseg](https://github.com/meetshah1995/pytorch-semseg). You can refer to that repo for more details.
 
